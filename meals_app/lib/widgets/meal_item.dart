@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meals_app/models/meal.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'package:meals_app/widgets/meal_item_trait.dart';
 
 class MealItem extends StatelessWidget {
   const MealItem({
@@ -8,6 +9,18 @@ class MealItem extends StatelessWidget {
     required this.meal,
   });
   final Meal meal;
+  String get complexityTest {
+    return meal.complexity.name[0]
+            .toUpperCase() + // The name is a string containing the source identifier used to declare the enum value.
+        // meal.complexity.name refers to the name property of the complexity property.
+        meal.complexity.name.substring(
+            1); // we have appended string to get first letter as capital
+  }
+
+  String get affordabilityTest {
+    return meal.affordability.name[0].toUpperCase() +
+        meal.complexity.name.substring(1);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,8 +81,18 @@ class MealItem extends StatelessWidget {
                     ),
                     SizedBox(height: 12),
                     Row(
-                      children: [],
-                    )
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        MealItemTrait(
+                            icon: Icons.schedule,
+                            label: '${meal.duration} min'),
+                        const SizedBox(width: 12),
+                        MealItemTrait(icon: Icons.work, label: complexityTest),
+                        const SizedBox(width: 12),
+                        MealItemTrait(
+                            icon: Icons.attach_money, label: affordabilityTest),
+                      ],
+                    ),
                   ],
                 ),
               ),
