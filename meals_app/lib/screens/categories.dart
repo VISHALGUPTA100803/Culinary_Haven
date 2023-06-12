@@ -6,12 +6,13 @@ import 'package:meals_app/screens/meals.dart';
 import 'package:meals_app/models/meal.dart';
 
 class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({super.key});
+  const CategoriesScreen({super.key, required this.onToggleFavourite});
+  final void Function(Meal meal) onToggleFavourite;
   void _selectCategory(BuildContext context, Category category) {
     final filteredMeals = dummyMeals
         .where((meal) => meal.categories.contains(category.id))
         .toList();
-        // Here's how the code works step by step:
+    // Here's how the code works step by step:
 // dummyMeals is the original list of meals.
 // The where method is called on dummyMeals to filter the list based on a condition.
 // The condition is defined using a callback function (meal) => meal.categories.contains(category.id).
@@ -21,39 +22,37 @@ class CategoriesScreen extends StatelessWidget {
 // Finally, the toList() method is called on the filtered iterable to convert it into a new list called filteredMeals.
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (ctx) =>
-            MealsScreen(title: category.title, meals: filteredMeals),
+        builder: (ctx) => MealsScreen(
+          title: category.title,
+          meals: filteredMeals,
+          onToggleFavourite: onToggleFavourite,
+        ),
       ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Daily Meals'),
+    return GridView(
+      padding: const EdgeInsets.all(24),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        childAspectRatio: 3 / 2, // height by width relation
+        crossAxisSpacing: 20.0,
+        mainAxisSpacing: 20.0,
       ),
-      body: GridView(
-        padding: const EdgeInsets.all(24),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 3 / 2, // height by width relation
-          crossAxisSpacing: 20.0,
-          mainAxisSpacing: 20.0,
-        ),
-        children: [
-          // we want a list of widget here so we convert the map to list
-          // alternative of for each loop
-          // availableCategories.map((category) => CategoryGridItem(category: category) ).toList()
-          for (final category in availableCategories)
-            CategoryGridItem(
-              category: category,
-              onSelectCategory: () {
-                _selectCategory(context,category);
-              },
-            )
-        ],
-      ),
+      children: [
+        // we want a list of widget here so we convert the map to list
+        // alternative of for each loop
+        // availableCategories.map((category) => CategoryGridItem(category: category) ).toList()
+        for (final category in availableCategories)
+          CategoryGridItem(
+            category: category,
+            onSelectCategory: () {
+              _selectCategory(context, category);
+            },
+          )
+      ],
     );
   }
 }

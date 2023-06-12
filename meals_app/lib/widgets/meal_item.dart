@@ -7,8 +7,10 @@ class MealItem extends StatelessWidget {
   const MealItem({
     super.key,
     required this.meal,
+    required this.onSelectMeal,
   });
   final Meal meal;
+  final void Function( Meal meal) onSelectMeal;
   String get complexityTest {
     return meal.complexity.name[0]
             .toUpperCase() + // The name is a string containing the source identifier used to declare the enum value.
@@ -36,7 +38,9 @@ class MealItem extends StatelessWidget {
       // ka border rounded rectangle ho jaa rahan jo above mentioned hain
       elevation: 2,
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          onSelectMeal(meal);
+        },
         child: Stack(
           children: [
 // FadeInImage When displaying images using the default Image widget, you might notice they simply pop onto the screen as they’re loaded. This might feel visually jarring to your users.
