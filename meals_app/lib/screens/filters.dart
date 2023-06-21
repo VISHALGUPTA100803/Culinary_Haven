@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 // import 'package:meals_app/screens/tabs.dart';
 // import 'package:meals_app/widgets/meal_drawer.dart';
 //import 'package:meals_app/widgets/switch_list_tile_view.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'package:meals_app/providers/filters_provider.dart';
 
 // enum Filter {
 //   glutenFree,
@@ -10,15 +13,18 @@ import 'package:flutter/material.dart';
 //   vegan,
 // }
 
-class FiltersScreen extends StatefulWidget {
-  const FiltersScreen({super.key,required this.currentFilters});
-  final Map<Filter, bool> currentFilters;
+class FiltersScreen extends ConsumerStatefulWidget {
+  const FiltersScreen({
+    super.key,
+    //required this.currentFilters,
+  });
+  //final Map<Filter, bool> currentFilters;
 
   @override
-  State<FiltersScreen> createState() => _FiltersScreenState();
+  ConsumerState<FiltersScreen> createState() => _FiltersScreenState();
 }
 
-class _FiltersScreenState extends State<FiltersScreen> {
+class _FiltersScreenState extends ConsumerState<FiltersScreen> {
   var _glutenFreeFilterSet = false;
   var _lactoseFreeFilterSet = false;
   var _vegetarianFilterSet = false;
@@ -28,10 +34,11 @@ class _FiltersScreenState extends State<FiltersScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    _glutenFreeFilterSet = widget.currentFilters[Filter.glutenFree]!;
-    _lactoseFreeFilterSet = widget.currentFilters[Filter.lactoseFree]!;
-    _vegetarianFilterSet = widget.currentFilters[Filter.vegetarian]!;
-    _veganFilterSet = widget.currentFilters[Filter.vegan]!;
+    final activeFilters = ref.read(filtersProvider);
+    _glutenFreeFilterSet = activeFilters[Filter.glutenFree]!;
+    _lactoseFreeFilterSet = activeFilters[Filter.lactoseFree]!;
+    _vegetarianFilterSet = activeFilters[Filter.vegetarian]!;
+    _veganFilterSet = activeFilters[Filter.vegan]!;
   }
 
   @override
@@ -54,16 +61,23 @@ class _FiltersScreenState extends State<FiltersScreen> {
         // Whenever the back button is pressed, you will get a callback at onWillPop,
         // which returns a Future. If the Future returns true, the screen is popped.
         onWillPop: () async {
-          Navigator.of(context).pop({
-            // we can pass values in pop
-
-            // we are passing map
+          ref.read(filtersProvider.notifier).setFilters({
             Filter.glutenFree: _glutenFreeFilterSet,
             Filter.lactoseFree: _lactoseFreeFilterSet,
             Filter.vegetarian: _vegetarianFilterSet,
             Filter.vegan: _veganFilterSet,
           });
-          return false; // because we have already popped
+          // Navigator.of(context).pop({
+          //   // we can pass values in pop
+
+          //   // we are passing map
+          //   // Filter.glutenFree: _glutenFreeFilterSet,
+          //   // Filter.lactoseFree: _lactoseFreeFilterSet,
+          //   // Filter.vegetarian: _vegetarianFilterSet,
+          //   // Filter.vegan: _veganFilterSet,
+          // });
+          // return false; // because we have already popped
+          return true;
         },
         child: Column(
           children: [

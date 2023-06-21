@@ -8,6 +8,7 @@ import 'package:meals_app/screens/filters.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:meals_app/providers/meal_provider.dart';
 import 'package:meals_app/providers/favourites_provider.dart';
+import 'package:meals_app/providers/filters_provider.dart';
 
 const kInitialFilters = {
   Filter.glutenFree: false,
@@ -27,7 +28,7 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
   int _selectedPageIndex = 0;
 
   //final List<Meal> _favouriteMeals = [];
-  Map<Filter, bool> _selectedFilters = kInitialFilters;
+  // Map<Filter, bool> _selectedFilters = kInitialFilters;
 
   // void _showInfoMessage(String message) {
   //   ScaffoldMessenger.of(context).clearSnackBars();
@@ -72,36 +73,37 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
       //     builder: (ctx) => FiltersScreen(),
       //   ),
       // );
-      final result = await Navigator.of(context).push<Map<Filter, bool>>(
+      await Navigator.of(context).push<Map<Filter, bool>>(
         // it returns map data type of future
         MaterialPageRoute(
-          builder: (ctx) => FiltersScreen(
-            currentFilters: _selectedFilters,
-          ),
+          builder: (ctx) => const FiltersScreen(
+              // currentFilters: _selectedFilters,
+              ),
         ),
       );
-      setState(() {
-        _selectedFilters = result ??
-            kInitialFilters; // ?? operator in dart checks value infront of it is null and if it is null
-        // the fallback value defined after the double question mark will be used
-      });
+      // setState(() {
+      //   _selectedFilters = result ??
+      //       kInitialFilters; // ?? operator in dart checks value infront of it is null and if it is null
+      //   // the fallback value defined after the double question mark will be used
+      // });
     }
   }
 
   @override
   Widget build(BuildContext context) {
     final meals = ref.watch(mealsProvider); // ref is a listner
+    final activeFilters = ref.watch(filtersProvider);
     final availiableMeals = meals.where((meal) {
-      if (_selectedFilters[Filter.glutenFree]! && !meal.isGlutenFree) {
+      if (activeFilters[Filter.glutenFree]! && !meal.isGlutenFree) {
         return false;
       }
-      if (_selectedFilters[Filter.lactoseFree]! && !meal.isLactoseFree) {
+      if (activeFilters[Filter.lactoseFree]! && !meal.isLactoseFree) {
         return false;
       }
-      if (_selectedFilters[Filter.vegetarian]! && !meal.isVegetarian) {
+      if (activeFilters[Filter.vegetarian]! && !meal.isVegetarian) {
         return false;
       }
-      if (_selectedFilters[Filter.vegan]! && !meal.isVegan) {
+      if (activeFilters[Filter.vegan]! && !meal.isVegan) {
         return false;
       }
       return true;
