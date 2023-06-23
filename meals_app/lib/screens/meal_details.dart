@@ -16,6 +16,9 @@ class MealDetailsScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     // WidgetRef is used in stateless widget in riverpod package
+    final favouriteMeals = ref.watch(favouriteMealsProvider);
+
+    final isFavourite = favouriteMeals.contains(meal);
 
     return Scaffold(
       appBar: AppBar(
@@ -28,10 +31,11 @@ class MealDetailsScreen extends ConsumerWidget {
                   .toggleMealFavouriteStatus(meal);
               ScaffoldMessenger.of(context).clearSnackBars();
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                content: Text(wasAdded ? 'Meal added as a favourite.': 'Meal removed.'),
+                content: Text(
+                    wasAdded ? 'Meal added as a favourite.' : 'Meal removed.'),
               ));
             },
-            icon: Icon(Icons.star),
+            icon: Icon(isFavourite ? Icons.star : Icons.star_border),
           ),
         ],
       ),
