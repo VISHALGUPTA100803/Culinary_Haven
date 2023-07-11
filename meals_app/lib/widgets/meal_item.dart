@@ -50,12 +50,15 @@ class MealItem extends StatelessWidget {
 //The MemoryImage class in Flutter is a class that represents an image loaded from bytes in memory.
 //It allows you to display an image in Flutter that is loaded from a Uint8List or List<int> containing the raw bytes of the image.
 
-            FadeInImage(
-              placeholder: MemoryImage(kTransparentImage),
-              image: NetworkImage(meal.imageUrl),
-              fit: BoxFit.cover,
-              height: 200,
-              width: double.infinity,
+            Hero(
+              tag: meal.id,
+              child: FadeInImage(
+                placeholder: MemoryImage(kTransparentImage),
+                image: NetworkImage(meal.imageUrl),
+                fit: BoxFit.cover,
+                height: 200,
+                width: double.infinity,
+              ),
             ),
             Positioned(
               bottom: 0,

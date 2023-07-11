@@ -35,7 +35,23 @@ class MealDetailsScreen extends ConsumerWidget {
                     wasAdded ? 'Meal added as a favourite.' : 'Meal removed.'),
               ));
             },
-            icon: Icon(isFavourite ? Icons.star : Icons.star_border),
+            icon: AnimatedSwitcher(
+              // switch between widgets with animation
+              duration: const Duration(milliseconds: 300),
+              transitionBuilder: (child, animation) {
+                return RotationTransition(
+                  turns: Tween<double>(
+                    begin: 0.8,
+                    end: 1,
+                  ).animate(animation),
+                  child: child,
+                );
+              },
+              child: Icon(
+                isFavourite ? Icons.star : Icons.star_border,
+                key: ValueKey(isFavourite),
+              ), // this child is only used above in the transitionBuilder argument
+            ),
           ),
         ],
       ),
@@ -43,11 +59,14 @@ class MealDetailsScreen extends ConsumerWidget {
         // or we can use listview too but it will not be centred
         child: Column(
           children: [
-            Image.network(
-              meal.imageUrl,
-              height: 300,
-              width: double.infinity,
-              fit: BoxFit.cover,
+            Hero(
+              tag: meal.id,
+              child: Image.network(
+                meal.imageUrl,
+                height: 300,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
             ),
             const SizedBox(
               height: 14,
