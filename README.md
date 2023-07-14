@@ -7,4 +7,18 @@ A meals app built using Flutter that allows users to discover various recipes, s
 - Browse through a wide range of recipes categorized by meal types (italian, quick & easy, hamburgers,german,light & lovely, exotic, breakfast,asian,french nad summer). <br>
 - Search for specific recipes in categories screen <br>
 - View detailed recipe ingredients and steps <br>
-- Mark recipes as favorites and access them in a separate section for quick reference. <br>
+- Mark recipes as favorites and access them in a Favourites section for quick reference. <br>
+- You can filter the meals by applying gluten-free, lactose-free, vegetarian and vegan filters <br>
+
+
+# Network images are used so internet connection is required for this meals app
+
+# I have used
+
+- Animation in Categories screen <br>
+- Animation in Meal details screen in the favourite icon button <br>
+- Tab based navigation <br>
+- Riverpod state management <br>
+- Implemented filters logic <br>
+- Implemented favourites logic to add a meal as a favourite <br>
+- Used Drawer in the App <br>
