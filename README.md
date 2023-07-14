@@ -22,3 +22,9 @@ A meals app built using Flutter that allows users to discover various recipes, s
 - Implemented filters logic <br>
 - Implemented favourites logic to add a meal as a favourite <br>
 - Used Drawer in the App <br>
+
+
+
+
+https://github.com/VISHALGUPTA100803/Meals_App/assets/96491059/781f4893-1c36-40ca-88ea-9260a7a2730b
+
