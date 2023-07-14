@@ -11,7 +11,7 @@ A meals app built using Flutter that allows users to discover various recipes, s
 - You can filter the meals by applying gluten-free, lactose-free, vegetarian and vegan filters <br>
 
 
-# Network images are used so internet connection is required for this meals app
+ Network images are used so internet connection is required for this meals app
 
 # I have used
 
