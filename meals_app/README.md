@@ -1,16 +1,30 @@
-# meals_app
+# Meals_App
 
-A new Flutter project.
+A meals app built using Flutter that allows users to discover various recipes, save their favorite meals, and learn more about cooking.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Browse through a wide range of recipes categorized by meal types (italian, quick & easy, hamburgers,german,light & lovely, exotic, breakfast,asian,french nad summer). <br>
+- Search for specific recipes in categories screen <br>
+- View detailed recipe ingredients and steps <br>
+- Mark recipes as favorites and access them in a Favourites section for quick reference. <br>
+- You can filter the meals by applying gluten-free, lactose-free, vegetarian and vegan filters <br>
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# Network images are used so internet connection is required for this meals app
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# I have used
+
+- Animation in Categories screen <br>
+- Animation in Meal details screen in the favourite icon button <br>
+- Tab based navigation <br>
+- Riverpod state management <br>
+- Implemented filters logic <br>
+- Implemented favourites logic to add a meal as a favourite <br>
+- Used Drawer in the App <br>
+
+
+
+
+https://github.com/VISHALGUPTA100803/Meals_App/assets/96491059/781f4893-1c36-40ca-88ea-9260a7a2730b
+
