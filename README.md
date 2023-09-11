@@ -1,6 +1,7 @@
 # Meals_App
 
 A meals app built using Flutter that allows users to discover various recipes, save their favorite meals, and learn more about cooking.
+[Download the APK from our Releases page here](https://github.com/VISHALGUPTA100803/Meals_App/releases/tag/v1.0.0)
 
 ## Features
 
@@ -28,5 +29,5 @@ Network images are used so internet connection is required for this meals app
 
 https://github.com/VISHALGUPTA100803/Meals_App/assets/96491059/781f4893-1c36-40ca-88ea-9260a7a2730b
 
-[Download the APK from our Releases page here](https://github.com/VISHALGUPTA100803/Meals_App/releases/tag/v1.0.0)
+
 
