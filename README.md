@@ -31,13 +31,22 @@
 To get started with the Meals App, download the APK from our [Releases Page](https://github.com/VISHALGUPTA100803/Meals_App/releases/tag/v1.0.0).
 
 ## Screenshots 📸
-![1](https://github.com/VISHALGUPTA100803/Meals_App/assets/96491059/04762b61-6d40-48cc-9f54-48d5471bc7e0)
 
-![2](https://github.com/VISHALGUPTA100803/Meals_App/assets/96491059/7a8f3fa1-0ee1-4176-bfd4-b2736f6faae3)
-![3](https://github.com/VISHALGUPTA100803/Meals_App/assets/96491059/e8a97439-5ee6-474d-bcdc-a1ff9c6dd3c8)
-![4](https://github.com/VISHALGUPTA100803/Meals_App/assets/96491059/e9ac21cb-d16c-4698-96b4-b72c![5](https://github.com/VISHALGUPTA100803/Meals_App/assets/96491059/1e8136cc-a579-45d4-bbef-e38e96899758)
-c9022a8c)
-![6](https://github.com/VISHALGUPTA100803/Meals_App/assets/96491059/a0742e53-efbe-4892-9a56-465079f331cb)
+<div style="display:flex;">
+  <img src="https://github.com/VISHALGUPTA100803/Meals_App/assets/96491059/04762b61-6d40-48cc-9f54-48d5471bc7e0" alt="Screenshot 1" width="400"/>
+  <img src="https://github.com/VISHALGUPTA100803/Meals_App/assets/96491059/7a8f3fa1-0ee1-4176-bfd4-b2736f6faae3" alt="Screenshot 2" width="400"/>
+</div>
+
+<div style="display:flex;">
+  <img src="https://github.com/VISHALGUPTA100803/Meals_App/assets/96491059/e8a97439-5ee6-474d-bcdc-a1ff9c6dd3c8" alt="Screenshot 3" width="400"/>
+  <img src="https://github.com/VISHALGUPTA100803/Meals_App/assets/96491059/e9ac21cb-d16c-4698-96b4-b72cc9022a8c" alt="Screenshot 4" width="400"/>
+</div>
+
+<div style="display:flex;">
+  <img src="https://github.com/VISHALGUPTA100803/Meals_App/assets/96491059/1e8136cc-a579-45d4-bbef-e38e96899758" alt="Screenshot 5" width="400"/>
+  <img src="https://github.com/VISHALGUPTA100803/Meals_App/assets/96491059/a0742e53-efbe-4892-9a56-465079f331cb" alt="Screenshot 6" width="400"/>
+</div>
+
 
 ## Video 📸
 
