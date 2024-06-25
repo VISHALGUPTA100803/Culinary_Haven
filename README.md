@@ -28,7 +28,14 @@
 
 ## Getting Started 🚀
 
-To get started with the Culinary Haven App, download the APK from our [Releases Page](https://github.com/VISHALGUPTA100803/Meals_App/releases/tag/v1.0.0).
+To get started with the Culinary Haven App, you have two options:
+
+1. **Download from the Amazon Appstore:**
+   - [Download from Amazon Appstore](https://www.amazon.com/gp/product/B0D7M91WND)
+
+2. **Download the APK directly:**
+   - [Download the latest version of the app](https://github.com/VISHALGUPTA100803/Culinary_Haven/releases/tag/v1.0.0)
+
 
 ## Screenshots 📸
 
