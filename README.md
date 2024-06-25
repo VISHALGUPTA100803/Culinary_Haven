@@ -1,8 +1,8 @@
-# Meals App 🍲
+# Culinary Haven 🍲
 
 
 
-**Meals App** is a delightful Flutter application that allows food enthusiasts to explore a diverse range of recipes, save their favorite dishes, and enhance their culinary skills. Whether you're craving Italian pasta, quick & easy meals, or exotic Asian cuisine, this app has got you covered!
+**Culinary Haven** is a delightful Flutter application that allows food enthusiasts to explore a diverse range of recipes, save their favorite dishes, and enhance their culinary skills. Whether you're craving Italian pasta, quick & easy meals, or exotic Asian cuisine, this app has got you covered!
 
 ## Features 🌟
 
@@ -28,7 +28,7 @@
 
 ## Getting Started 🚀
 
-To get started with the Meals App, download the APK from our [Releases Page](https://github.com/VISHALGUPTA100803/Meals_App/releases/tag/v1.0.0).
+To get started with the Culinary Haven App, download the APK from our [Releases Page](https://github.com/VISHALGUPTA100803/Meals_App/releases/tag/v1.0.0).
 
 ## Screenshots 📸
 
